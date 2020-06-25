@@ -4,6 +4,7 @@ import { Ponto } from './ponto';
 import { PontoId } from './ponto-id';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { SwPush, SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,16 @@ export class AppComponent {
 
   first: string;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore,
+              private swUpdate: SwUpdate,
+              private swPush: SwPush) {
+
+    swUpdate.available.subscribe(() => {
+      if (confirm('New version available. Load new version?')) {
+        window.location.reload();
+      }
+    });
+
     this.documentCollection = afs.collection<Ponto>('pontos', ref => ref.orderBy('point', 'desc'));
 
     this.document = this.documentCollection.snapshotChanges().pipe(
