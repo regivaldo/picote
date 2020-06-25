@@ -38,7 +38,10 @@ export class AppComponent {
   }
 
   minus = (data: any): void => {
-    data.point--;
+    if (data.point >= 0) {
+      data.point--;
+    }
+
     this.update(data);
   }
 
