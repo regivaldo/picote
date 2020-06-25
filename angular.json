@@ -117,8 +117,16 @@
               "devServerTarget": "picote:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "picote"
+    }
+  },
+  "defaultProject": "picote",
+  "cli": {
+    "analytics": false
+  }
 }

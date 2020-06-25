@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --body: #f2f0f0;
+  --element: #fff;
+  --first: #f2bb38;
+  --text-light: #fff;
+  --text-dark: #444;
+  --plus: #20bec6;
+  --plus-dark: #17898f;
+  --minus: #ed1941;
+  --minus-dark: #7a1023;
+  --dark-alpha: rgba(0,0,0,.6);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+html {
+  font-size: 14px;
+  transition: 0.5s font-size;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--body);
+}

@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Ponto } from './ponto';
+import { PontoId } from './ponto-id';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,41 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'picote';
+  private documentCollection: AngularFirestoreCollection<Ponto>;
+  document: Observable<PontoId[]>;
+
+  first: string;
+
+  constructor(private afs: AngularFirestore) {
+    this.documentCollection = afs.collection<Ponto>('pontos', ref => ref.orderBy('point', 'desc'));
+
+    this.document = this.documentCollection.snapshotChanges().pipe(
+      map(actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data() as Ponto;
+            const id = a.payload.doc.id;
+            this.first = (a.payload.newIndex === 0) ? data.name : this.first;
+            return {id, ...data};
+          });
+        }
+      )
+    );
+  }
+
+  plus = (data: any): void => {
+    data.point++;
+    this.update(data);
+  }
+
+  minus = (data: any): void => {
+    data.point--;
+    this.update(data);
+  }
+
+  update = (data: any): void => {
+    this.afs
+    .collection('pontos')
+    .doc(data.id)
+    .update(data);
+  }
 }
