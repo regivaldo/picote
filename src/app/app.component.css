@@ -6,7 +6,7 @@
 
 @media only screen and (max-width: 920px) {
   .container {
-    width: calc(100% - 2rem);
+    width: 100%;
   }
 }
 
