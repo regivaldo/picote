@@ -1,17 +1,19 @@
 <div class="container">
   <header>
-    <h1>Quem é o autal rei do picote?</h1>
-    <img src="assets/king.png" alt="Rei do Picote">
-    <h2>{{ first }}</h2>
+    <p>Quem é o autal rei do picote?</p>
+    <img src="assets/icons/king-of-picote.png" alt="">
+    <h1>{{ first }}</h1>
   </header>
   
   <section>
     <ul>
       <li *ngFor="let doc of document | async">
-        <span class="name">{{ doc.name }}</span>
-        <span class="point">{{ doc.point }}</span>
-        <button class="plus" (click)="plus(doc)">+</button>
-        <button class="minus" (click)="minus(doc)">-</button>
+        <h2 class="point">{{ doc.point }}</h2>
+        <h3 class="name">{{ doc.name }}</h3>
+        <div class="buttons">
+          <button class="plus" (click)="plus(doc)">+</button>
+          <button class="minus" (click)="minus(doc)">-</button>
+        </div>
       </li>
     </ul>
   </section>
