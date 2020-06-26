@@ -1,9 +1,5 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Deploy Picote
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
     branches: [ master ]
@@ -21,5 +17,5 @@ jobs:
       run: npm i -g firebase-tools
     - name: Build site
       run: npm run build --prod
-    - name: Build site
+    - name: Deploy site
       run: firebase deploy --token $FIREBASE_TOKEN
