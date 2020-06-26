@@ -125,7 +125,6 @@
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {
-            "token": "$FIREBASE_TOKEN"
           }
         }
       }
