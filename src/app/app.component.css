@@ -31,8 +31,8 @@ header img {
 }
 
 header p {
-  color: var(--text-dark);
   font-size: 1.2rem;
+  color: var(--text-light);
 }
 
 header h1 {
