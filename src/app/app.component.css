@@ -17,6 +17,7 @@
 }
 
 header {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -108,4 +109,26 @@ ul li .minus {
 
 ul li .minus:hover {
   background-color: var(--minus-dark);
+}
+
+.showLogin {
+  position: absolute;
+  display: flex;
+  top: 1rem;
+  right: 1rem;
+  padding: .5rem;
+  border: 0;
+  border-radius: 100%;
+  background-color: var(--plus);
+  cursor: pointer;
+  z-index: 999;
+}
+
+.showLogin:hover {
+  background-color: var(--plus-dark);
+}
+
+.showLogin img {
+  width: 32px;
+  margin: 0;
 }

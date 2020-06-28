@@ -3,6 +3,11 @@
     <p>Quem é o autal rei do picote?</p>
     <img src="assets/icons/king-of-picote.png" alt="">
     <h1>{{ first }}</h1>
+    <button class="showLogin" (click)="toggle()">
+      <img src="assets/user.svg" alt="">
+    </button>
+
+    <app-signin *ngIf="isOpen"></app-signin>
   </header>
   
   <section>
@@ -10,7 +15,7 @@
       <li *ngFor="let doc of document | async">
         <h2 class="point">{{ doc.point }}</h2>
         <h3 class="name">{{ doc.name }}</h3>
-        <div class="buttons">
+        <div class="buttons" *ngIf="hasAutenticated() | async as user;">
           <button class="plus" (click)="plus(doc)">+</button>
           <button class="minus" (click)="minus(doc)">-</button>
         </div>

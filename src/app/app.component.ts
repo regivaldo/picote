@@ -5,6 +5,7 @@ import { PontoId } from './ponto-id';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SwPush, SwUpdate } from '@angular/service-worker';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,12 @@ export class AppComponent {
   document: Observable<PontoId[]>;
 
   first: string;
+  isOpen = false;
 
   constructor(private afs: AngularFirestore,
               private swUpdate: SwUpdate,
-              private swPush: SwPush) {
+              private swPush: SwPush,
+              private authService: AuthService) {
 
     swUpdate.available.subscribe(() => {
       if (confirm('New version available. Load new version?')) {
@@ -60,5 +63,13 @@ export class AppComponent {
     .collection('pontos')
     .doc(data.id)
     .update(data);
+  }
+
+  hasAutenticated = () => {
+    return this.authService.authFire.user;
+  }
+
+  toggle = () => {
+    this.isOpen = !this.isOpen;
   }
 }

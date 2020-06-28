@@ -1,0 +1,27 @@
+.auth {
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: var(--element);
+}
+
+.auth h1 {
+  font-size: 2rem;
+}
+
+.auth button {
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--text-light);
+  border: 0;
+  border-radius: 3rem;
+  background-color: var(--minus);
+  cursor: pointer;
+}
+
+.auth button:hover {
+  background-color: var(--minus-dark);
+}

@@ -1,0 +1,10 @@
+<div class="auth">
+  <div *ngIf="hasAutenticated() | async as user; else showLogin">
+    <h1>Hello {{ user.displayName }}!</h1>
+    <button (click)="logout()">Logout</button>
+  </div>
+  <ng-template #showLogin>
+    <h1>Please login.</h1>
+    <button (click)="login()">Login with Google</button>
+  </ng-template>
+</div>
