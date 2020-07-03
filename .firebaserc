@@ -1,14 +1,5 @@
 {
   "projects": {
     "default": "picote-2b113"
-  },
-  "targets": {
-    "picote-2b113": {
-      "hosting": {
-        "picote": [
-          "picote-2b113"
-        ]
-      }
-    }
   }
 }
