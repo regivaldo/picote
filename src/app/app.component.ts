@@ -17,6 +17,7 @@ export class AppComponent {
   document: Observable<PontoId[]>;
 
   first: string;
+  firstPoint: number;
   isOpen = false;
 
   constructor(private afs: AngularFirestore,
@@ -38,6 +39,14 @@ export class AppComponent {
             const data = a.payload.doc.data() as Ponto;
             const id = a.payload.doc.id;
             this.first = (a.payload.newIndex === 0) ? data.name : this.first;
+            this.firstPoint = (a.payload.newIndex === 0) ? data.point : this.firstPoint;
+
+            if (this.firstPoint === data.point) {
+              if (this.first.indexOf(data.name) === -1) {
+                this.first = `${this.first} e ${data.name}`;
+              }
+            }
+
             return {id, ...data};
           });
         }
