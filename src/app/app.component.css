@@ -56,7 +56,7 @@ ul {
 
 ul li {
   display: flex;
-  flex: 1 0 200px;
+  flex: 1 0 320PX;
   flex-direction: column;
   margin: .5rem;
   border-radius: 5px;
