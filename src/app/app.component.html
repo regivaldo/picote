@@ -1,15 +1,25 @@
 <div class="container">
-  <header>
-    <p>Quem está reinando atualmente como <strong>King of Picote</strong>?</p>
-    <img src="assets/icons/king-of-picote.png" alt="">
-    <h1>{{ first }}</h1>
-    <button class="showLogin" (click)="toggle()">
-      <img src="assets/user.svg" alt="">
-    </button>
+  <aside>
+    <header>
+      <app-signin *ngIf="isOpen"></app-signin>
+      <button class="showLogin" (click)="toggle()">
+        <img src="assets/user.svg" alt="">
+      </button>
+      <img src="assets/icons/king-of-picote.png" alt="">
+      <h1>Rei do Picote?</h1>
+      <div class="info-block">
+        <p><strong>Como adquiro pontos?</strong></p>
+        <p>Ganhar pontos não é algo bom, sempre que você ganha um ponto significa que falhou com a integração do seu time.</p><br>
+        <p><strong>O que faz eu ganhar ponto?</strong></p>
+        <p>Não abrir a camera em uma conferência, não parcipar das integrações online (café virtual), não ir ao almoço do time no dia do Almoço do Time, ficar no telefone no almoço ou café com o time.</p><br>
+        <p><strong>E quando os pontos zeram?</strong></p>
+        <p>Todo mês os pontos serão zerados e quem tiver mais pontos se torna o Rei do Picote</p><br>
+        <p><strong>E o que o Rei do Picote faz?</strong></p>
+        <p>Paga uma prenda doce. Pode ser chocolate pra galera, um bolo, uma rodada de sorvete, de churros, ou um pudim.</p>
+      </div>
+    </header>
+  </aside>
 
-    <app-signin *ngIf="isOpen"></app-signin>
-  </header>
-  
   <section>
     <ul>
       <li *ngFor="let doc of document | async">
@@ -21,5 +31,154 @@
         </div>
       </li>
     </ul>
+
+    <h2>Reis do Picote</h2>
+
+    <div class="list">
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status yes">Pago</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+
+      <div class="card-line">
+        <span class="name">Regivaldo</span>
+        <span class="info">Trazer chocolate</span>
+        <span class="status no">Ainda devendo</span>
+      </div>
+    </div>
   </section>
+  
 </div>
