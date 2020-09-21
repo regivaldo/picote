@@ -13,7 +13,7 @@
   <section>
     <ul>
       <li *ngFor="let doc of document | async">
-        <h2 class="point">{{ doc.point }}</h2>
+        <h2 class="point" [ngClass]="{'green' : doc.point < 0}">{{ doc.point }}</h2>
         <h3 class="name">{{ doc.name }}</h3>
         <div class="buttons" *ngIf="hasAutenticated() | async as user;">
           <button class="plus" (click)="plus(doc)">+</button>

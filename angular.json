@@ -27,6 +27,14 @@
             "styles": [
               "src/styles.css"
             ],
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "firebase/app",
+              "@firebase/app",
+              "@firebase/firestore",
+              "@firebase/component",
+              "@firebase/util"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -102,24 +110,11 @@
           "options": {
             "tsConfig": [
               "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "picote:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "picote:serve:production"
-            }
           }
         },
         "deploy": {

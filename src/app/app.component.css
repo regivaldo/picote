@@ -75,6 +75,10 @@ ul li .point {
   font-size: 5rem;
 }
 
+ul li .point.green {
+  color: var(--plus);
+}
+
 ul li .buttons {
   display: flex;
   width: 100%;
