@@ -157,6 +157,10 @@ ul li .minus:hover {
   z-index: 999;
 }
 
+.showLogin.logged {
+  background-color: var(--first);
+}
+
 .showLogin:hover {
   background-color: var(--plus-dark);
 }

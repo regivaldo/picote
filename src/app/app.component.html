@@ -2,7 +2,7 @@
   <aside>
     <header>
       <app-signin *ngIf="isOpen"></app-signin>
-      <button class="showLogin" (click)="toggle()">
+      <button class="showLogin" (click)="toggle()" [ngClass]="{'logged' : hasAutenticated()}">
         <img src="assets/user.svg" alt="">
       </button>
       <img src="assets/icons/king-of-picote.png" alt="">
